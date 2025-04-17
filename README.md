@@ -42,7 +42,7 @@ cd CoolCity
 ```
 📂 Project Structure
 
-
+```
 CoolCity/
 ├── assets/                  # Images and icons
 ├── components/              # Reusable JS components
@@ -55,6 +55,7 @@ CoolCity/
 │   ├── routes/              # API routes
 │   ├── controllers/         # Logic for endpoints
 │   └── .env                 # Environment variables
+```
 ✨ Upcoming Features
 User accounts with saved locations
 
