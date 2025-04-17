@@ -1,0 +1,442 @@
+:root {
+    --primary-color: #388e3c;
+    --secondary-color: #388e3c;
+    --accent-color: #388e3c;
+    --card-bg: #ffffff;
+    --text-color: #388e3c;
+    --light-text: #8d99ae;
+    --border-color: #e9ecef;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+.header-logo-left{
+    height: 80px;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-card {
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.header-card h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.header-card h1 i {
+    margin-right: 10px;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-container input {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 12px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-container button:hover {
+    background-color: #388e3c;
+}
+
+.current-weather-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.current-weather-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.card-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h2 {
+    font-size: 1.8rem;
+}
+
+.date-time {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.weather-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.temp-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#current-temp {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.unit-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.unit-toggle button {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 2px 5px;
+    transition: color 0.3s;
+}
+
+.unit-toggle button.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.unit-toggle span {
+    color: var(--border-color);
+}
+
+.weather-icon-desc {
+    text-align: center;
+}
+
+#weather-icon {
+    width: 80px;
+    height: 80px;
+}
+
+#weather-description {
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.detail-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--light-text);
+}
+
+.forecast-header-card {
+    background: linear-gradient(135deg, var(--secondary-color), #388e3c);
+    color: white;
+}
+
+.forecast-header-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.forecast-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg);
+    transition: transform 0.3s ease;
+}
+
+.forecast-card:hover {
+    transform: scale(1.03);
+}
+
+.forecast-day {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.forecast-date {
+    color: var(--light-text);
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.forecast-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.forecast-temp {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.max-temp {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.min-temp {
+    color: var(--light-text);
+}
+
+.footer-card {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.footer-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.refresh-note {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .weather-main {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .temp-container {
+        justify-content: center;
+    }
+    
+    .weather-icon-desc {
+        width: 100%;
+    }
+    
+    .forecast-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        flex-direction: column;
+    }
+    
+    .search-container input,
+    .search-container button {
+        width: 100%;
+    }
+    
+    #current-temp {
+        font-size: 2.5rem;
+    }
+    
+    .forecast-cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Header */
+header {
+    background-color: #f9f9f9;
+    padding: 1em 0;
+    border-bottom: 1px solid #eee;
+}
+header .container {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Needed for absolute positioning of the logo */
+}
+.logo {
+    font-size: 1.5em;
+    color: #4CAF50; /* Green */
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #4CAF50;
+}
+
+.header-actions .report-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.header-actions .report-button:hover {
+    background-color: #388e3c;
+}
+
+.header-logo {
+    position: absolute;
+    top: 10px; /* Adjust as needed for vertical positioning */
+    right: 10px; /* Adjust as needed for horizontal positioning */
+    height: 50px; /* Adjust the height to control the logo size */
+    /* You can add more styling here like border-radius, etc. */
+}
+.map-wrapper {
+    position: relative;
+    margin-top: 20px;
+}
+
+#map, #building {
+    margin-bottom: 15px;
+}
+
+.map-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.map-control-button {
+    padding: 8px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.map-control-button:hover {
+    background-color: #e0e0e0;
+}
+
+.map-control-button.active {
+    background-color: #388e3c;
+    color: white;
+    border-color: #388e3c;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast Cards</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">CoolCity</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="/weather-forecast/index box.html">Weather Forecast</a></li>
+                    <li><a href="/maps/heat-map.html">Temprature Map</a></li>
+                    <li><a href="/maps/wind-map.html">Wind Map</a></li>
+                    <li><a href="/maps/precip.html">Precipitation Map</a></li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <img  src="/logo.png" alt="CoolCity Logo" class="header-logo-left">
+            </div>
+        </div>
+    </header>
+    <div class="app-container">
+        <!-- Header Card -->
+        <div class="card header-card">
+            <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+                <button id="location-btn"><i class="fas fa-location-arrow"></i> My Location</button>
+            </div>
+        </div>
+
+        <!-- Current Weather Card -->
+        <div class="card current-weather-card">
+            <div class="card-header">
+                <h2 id="current-city">--</h2>
+                <div class="date-time" id="current-date">--</div>
+            </div>
+            <div class="card-body">
+                <div class="weather-main">
+                    <div class="temp-container">
+                        <span id="current-temp">--</span>
+                        <span class="unit-toggle">
+                            <button class="active" id="celsius-btn">°C</button>
+                            <span>|</span>
+                            <button id="fahrenheit-btn">°F</button>
+                        </span>
+                    </div>
+                    <div class="weather-icon-desc">
+                        <img id="weather-icon" src="" alt="Weather icon">
+                        <div id="weather-description">--</div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <span class="detail-label">Humidity</span>
+                            <span id="humidity">--</span>%
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <span class="detail-label">Wind</span>
+                            <span id="wind-speed">--</span> km/h
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-compress-alt"></i>
+                        <div>
+                            <span class="detail-label">Pressure</span>
+                            <span id="pressure">--</span> hPa
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Forecast Cards -->
+        <div class="card forecast-header-card">
+            <h2><i class="fas fa-calendar-alt"></i> 4-Day Forecast</h2>
+        </div>
+        
+        <div class="forecast-cards-container" id="forecast">
+            <!-- Forecast cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Footer Card -->
+        <div class="card footer-card">
+            <h3>made by <a href="https://www.linkedin.com/in/sheikhwasimuddin">Sheikh Wasimuddin</a>,<a href="https://www.linkedin.com/in/tejas-kalbande-71b4a3222/">Tejas Kalbande</a>,<a href="https://www.linkedin.com/in/darshil-amalkar-b61a61349/">Darshil Amalkar,</a> <a href="https://www.linkedin.com/in/farhan-sheikh-47b593286/">Farhan Sheikh .</a></h3>
+            <p class="refresh-note">Click search to refresh data</p>
+        </div>
+    </div>
+
+    <script src="script box.js"></script>
+</body>
+</html>
