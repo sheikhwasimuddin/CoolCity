@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolCity - Urban Microclimate Mapping (Inspired Design)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPvknHGJwWtJx7GAWI/pclotCNuoKGhSDiJjeJECxjKjkVFffyjFgzc2MLgYuKp+odGxHOgf="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYM8mR4FHAkjSbyNZ1azNDRBIBYnFPw6yIxlGG5yQx6WI/PaiMmhJYtycnFQDyrHLnqErJTxKH0j9cpHi5+vg=="
+            crossorigin=""></script>
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">CoolCity</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/weather-forecast/index box.html">Weather Forecast</a></li>
+                    <li><a href="/maps/heat-map.html">Temprature Map</a></li>
+                    <li><a href="/maps/wind-map.html">Wind Map</a></li>
+                    <li><a href="/maps/precip.html">Precipitation Map</a></li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <img  src="./logo.png" alt="CoolCity Logo" class="header-logo-left">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="container">
+            <div class="hero-text">
+                <h1>Mapping Urban Heat Islands for Cooler Cities</h1>
+                <p>Identify hot spots, understand microclimates, and discover eco-friendly cooling interventions.</p>
+            </div>
+            <div class="hero-indicators">
+                <div class="indicator-card">
+                    <h3>Current Temperature</h3>
+                    <div class="value">--</div>
+                    <div class="details">Based on location</div>
+                </div>
+                <div class="indicator-card">
+                    <h3>Current Humidity</h3>
+                    <div class="value">--</div>
+                    <div class="details">Based on location</div>
+                </div>
+                <div class="indicator-card">
+                    <h3>Green Cover</h3>
+                    <div class="value">22%</div>
+                    <div class="details">Urban tree canopy coverage</div>
+                </div>
+                <div class="indicator-card">
+                    <h3>Air Movement</h3>
+                    <div class="value">Low</div>
+                    <div class="details">Restricted by building density</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="heat-map-section" class="container">
+            <h2>Urban Heat Map</h2>
+            <p>Explore temperature variations across the city</p>
+            <div class="map-wrapper">
+                <div id="map">
+                    <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/tejas2/cm9jmvniw001201sbbzidd9v1.html?title=false&access_token=pk.eyJ1IjoidGVqYXMyIiwiYSI6ImNtOWppcHJsOTBlYzQyaXNiczV5cWMyYzUifQ.iu9NmyrnMSKEeGGtnuv8Tg&zoomwheel=false#10.06/21.1288/79.087" title="Example: heatmap layer" style="border:none;"></iframe>
+                </div>
+                <div id="building">
+                    <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/tejas2/cm9jr6o1z005p01sbgisn1ltz.html?title=false&access_token=pk.eyJ1IjoidGVqYXMyIiwiYSI6ImNtOWppcHJsOTBlYzQyaXNiczV5cWMyYzUifQ.iu9NmyrnMSKEeGGtnuv8Tg&zoomwheel=false#15.68/21.145292/79.083107/40/85" title="Example: heatmap layer-copy" style="border:none;"></iframe>
+                </div>
+                <div class="map-controls">
+                    <button class="map-control-button active" >Heat Map</button>
+                    <button class="map-control-button">Buildings</button>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        
+     
+
+        <section id="cooling-interventions" class="container panel">
+            <h2>Cooling Interventions</h2>
+            <p class="sub-heading">Eco-friendly solutions to reduce urban heat</p>
+            <div class="interventions-grid">
+                <div class="intervention-card">
+                    <div class="icon">🌿</div>
+                    <h3>Green Roofs</h3>
+                    <p>Incorporate vegetation on rooftops to absorb heat and provide insulation.</p>
+                    <div class="intervention-details">
+                        <span class="detail">Impact: <span class="value high">High</span></span>
+                        <span class="detail">Cost: <span class="value medium-high">Medium-High</span></span>
+                        <span class="detail">Timeframe: <span class="value medium">1-2 years</span></span>
+                    </div>
+                    <a href="/cooling/green-roofs.html" class="learn-more" data-intervention="green-roofs">Learn more →</a>
+                </div>
+                <div class="intervention-card">
+                    <div class="icon">💧</div>
+                    <h3>Water Features</h3>
+                    <p>Add fountains, ponds, or misting systems for evaporative cooling.</p>
+                    <div class="intervention-details">
+                        <span class="detail">Impact: <span class="value medium">Medium</span></span>
+                        <span class="detail">Cost: <span class="value medium">Medium</span></span>
+                        <span class="detail">Timeframe: <span class="value short">6-12 months</span></span>
+                    </div>
+                    <a href="/cooling/water-features.html" class="learn-more" data-intervention="water-features">Learn more →</a>
+                </div>
+                <div class="intervention-card">
+                    <div class="icon">🌳</div>
+                    <h3>Urban Tree Canopy</h3>
+                    <p>Plant shade trees along streets and in public spaces to reduce surface temperatures.</p>
+                    <div class="intervention-details">
+                        <span class="detail">Impact: <span class="value high">High</span></span>
+                        <span class="detail">Cost: <span class="value low-medium">Low-Medium</span></span>
+                        <span class="detail">Timeframe: <span class="value long">5-10+ years</span></span>
+                    </div>
+                    <a href="/cooling/urban-tree-canopy.html" class="learn-more" data-intervention="urban-tree-canopy">Learn more →</a>
+                </div>
+                <div class="intervention-card">
+                    <div class="icon">🏢</div>
+                    <h3>Cool Materials</h3>
+                    <p>Replace dark surfaces with high-albedo materials that reflect rather than absorb heat.</p>
+                    <div class="intervention-details">
+                        <span class="detail">Impact: <span class="value medium-high">Medium-High</span></span>
+                        <span class="detail">Cost: <span class="value medium-high">Medium-High</span></span>
+                        <span class="detail">Timeframe: <span class="value medium">1-3 years</span></span>
+                    </div>
+                    <a href="/cooling/cool-materials.html" class="learn-more" data-intervention="cool-materials">Learn more →</a>
+                </div>
+                <div class="intervention-card">
+                    <div class="icon">🌬️</div>
+                    <h3>Urban Ventilation Corridors</h3>
+                    <p>Design building layouts to channel cooling breezes through urban areas.</p>
+                    <div class="intervention-details">
+                        <span class="detail">Impact: <span class="value medium">Medium</span></span>
+                        <span class="detail">Cost: <span class="value variable">Variable</span></span>
+                        <span class="detail">Timeframe: <span class="value long">5+ years</span></span>
+                    </div>
+                    <a href="/cooling/urban-ventilation-corridors.html" class="learn-more" data-intervention="urban-ventilation-corridors">Learn more →</a>
+                </div>
+                <div class="intervention-card">
+                    <div class="icon">🔆</div>
+                    <h3>Reflective Pavements</h3>
+                    <p>Use light-colored or reflective materials for pavements to reduce heat absorption.</p>
+                    <div class="intervention-details">
+                        <span class="detail">Impact: <span class="value medium-high">Medium-High</span></span>
+                        <span class="detail">Cost: <span class="value medium">Medium</span></span>
+                        <span class="detail">Timeframe: <span class="value medium">1-2 years</span></span>
+                    </div>
+                    <a href="/cooling/reflective-pavements.html" class="learn-more" data-intervention="reflective-pavements">Learn more →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="community-input-section" class="container panel">
+            <h2>Community Input</h2>
+            <p class="sub-heading">Help us identify and address heat islands in your community</p>
+            <div class="community-input-grid">
+                <div class="why-input-matters">
+                    <h3>Why Your Input Matters</h3>
+                    <ul>
+                        <li>Identify heat islands that might be missed by satellite data.</li>
+                        <li>Understand how heat affects daily life in different neighborhoods.</li>
+                        <li>Prioritize interventions where they're needed most.</li>
+                        <li>Measure the success of cooling initiatives over time.</li>
+                        <li>Build community support for green infrastructure projects.</li>
+                    </ul>
+                </div>
+                <div class="report-heat-island">
+                    <h3>Report a Heat Island</h3>
+                    <p class="sub-heading">Share your experiences with urban heat to help improve our mapping and solutions</p>
+                    <form id="report-form" action="/action">
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" placeholder="Enter address or intersection">
+                            <button class="geolocation-button">📍</button>
+                            <small>Or click on the map icon to use your current location.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="temperature">Approximate Temperature (if known)</label>
+                            <input type="text" id="temperature" placeholder="e.g., 95°F">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">When did you notice this heat island?</label>
+                            <input type="date" id="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Describe the area and your experience</label>
+                            <textarea id="description" rows="5" placeholder="What makes this area hot? How does it affect you? What features are present (buildings, pavement, lack of trees)?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (optional)</label>
+                            <input type="email" id="email" placeholder="For updates on this area">
+                        </div>
+                        <button type="submit" class="submit-button">Submit Report →</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CoolCity. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        let map;
+        const openWeatherMapApiKey = 'openWeatherAPI_KEY'; // Replace with your OpenWeatherMap API key
+
+        function initMap() {
+            map = L.map('map').setView([21.1458, 79.0882], 13);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            map.on('click', function(e) {
+                const lat = e.latlng.lat.toFixed(6);
+                const lng = e.latlng.lng.toFixed(6);
+                updateLocationInput(lat, lng);
+                getInterventionSuggestions(lat, lng);
+                fetchWeatherData(lat, lng);
+            });
+
+            setupZoomControls();
+            setupLayerToggles();
+            setupGeolocation();
+            setupReportForm();
+            fetchWeatherData(21.1458, 79.0882);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap();
+            setupLearnMoreLinks();
+        });
+
+        function updateLocationInput(lat, lng) {
+            const locationInput = document.getElementById('location');
+            if (locationInput) {
+                locationInput.value = `${lat}, ${lng}`;
+            }
+        }
+
+        function setupZoomControls() {
+            const zoomInButton = document.querySelector('.zoom-in');
+            const zoomOutButton = document.querySelector('.zoom-out');
+
+            if (zoomInButton) {
+                zoomInButton.addEventListener('click', () => map.setZoom(map.getZoom() + 1));
+            }
+            if (zoomOutButton) {
+                zoomOutButton.addEventListener('click', () => map.setZoom(map.getZoom() - 1));
+            }
+        }
+
+        function setupLayerToggles() {
+            const heatmapLayerButton = document.querySelector('.map-control-button:nth-child(1)');
+            const buildingsLayerButton = document.querySelector('.map-control-button:nth-child(2)');
+            const communityLayerButton = document.querySelector('.map-control-button:nth-child(3)');
+            const infoLayerButton = document.querySelector('.map-control-button:nth-child(4)');
+
+            function toggleButtonActiveClass(button) {
+                document.querySelectorAll('.map-control-button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            }
+
+            if (heatmapLayerButton) {
+                heatmapLayerButton.addEventListener('click', () => {
+                    toggleButtonActiveClass(heatmapLayerButton);
+                    console.log('Toggling Heat Map Layer (Leaflet)');
+                    // Implement Leaflet layer control logic here
+                });
+            }
+
+            if (buildingsLayerButton) {
+                buildingsLayerButton.addEventListener('click', () => {
+                    toggleButtonActiveClass(buildingsLayerButton);
+                    console.log('Toggling Buildings Layer (Leaflet)');
+                    // Implement Leaflet layer control logic here
+                });
+            }
+
+            if (communityLayerButton) {
+                communityLayerButton.addEventListener('click', () => {
+                    toggleButtonActiveClass(communityLayerButton);
+                    console.log('Toggling Community Layer (Leaflet)');
+                    // Implement Leaflet layer control logic here
+                });
+            }
+
+            if (infoLayerButton) {
+                infoLayerButton.addEventListener('click', () => {
+                    toggleButtonActiveClass(infoLayerButton);
+                    console.log('Toggling Info Layer (Leaflet)');
+                    // Implement Leaflet layer control logic here
+                });
+            }
+        }
+
+        function setupGeolocation() {
+            const geolocationButton = document.querySelector('.geolocation-button');
+            if (geolocationButton && navigator.geolocation) {
+                geolocationButton.addEventListener('click', () => {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const lat = position.coords.latitude.toFixed(6);
+                            const lng = position.coords.longitude.toFixed(6);
+                            updateLocationInput(lat, lng);
+                            map.setView([parseFloat(lat), parseFloat(lng)], 15);
+                            getInterventionSuggestions(lat, lng);
+                            fetchWeatherData(lat, lng);
+                        },
+                        (error) => {
+                            alert('Error getting geolocation: ' + error.message);
+                        }
+                    );
+                });
+            } else if (geolocationButton) {
+                geolocationButton.style.display = 'none';
+            }
+        }
+
+        function setupReportForm() {
+            const reportForm = document.getElementById('report-form');
+            if (reportForm) {
+                reportForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const location = document.getElementById('location').value;
+                    const temperature = document.getElementById('temperature').value;
+                    const date = document.getElementById('date').value;
+                    const description = document.getElementById('description').value;
+                    const email = document.getElementById('email').value;
+
+                    console.log('Heat island report submitted:', { location, temperature, date, description, email });
+                    alert('Report submitted! (This is a frontend simulation)');
+                    reportForm.reset();
+                });
+            }
+        }
+
+        function getInterventionSuggestions(latitude, longitude) {
+            console.log(`Fetching suggestions for: ${latitude}, ${longitude}`);
+            const suggestionsList = document.getElementById('suggestions-list');
+            if (suggestionsList) {
+                suggestionsList.innerHTML = '';
+                const loadingItem = document.createElement('li');
+                loadingItem.textContent = 'Fetching suggestions...';
+                suggestionsListsuggestionsList.appendChild(loadingItem);
+
+setTimeout(() => {
+    const suggestions = [
+        "Promote planting of indigenous shade trees in this area.",
+        "Consider implementing cool roof policies for new constructions.",
+        "Explore the use of permeable pavements in public spaces.",
+        "Develop small urban green spaces and pocket parks.",
+        "Encourage the creation of green walls on buildings."
+    ];
+    suggestionsList.innerHTML = '';
+    suggestions.forEach(suggestion => {
+        const listItem = document.createElement('li');
+        listItem.textContent = suggestion;
+        suggestionsList.appendChild(listItem);
+    });
+}, 1500);
+}
+}
+
+function fetchWeatherData(latitude, longitude) {
+const apiKeyOWM = "openWeatherMapApiKey";
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKeyOWM}&units=metric`;
+
+fetch(apiUrl)
+.then(response => response.json())
+.then(data => {
+    console.log('Weather Data:', data);
+    updateWeatherIndicators(data);
+})
+.catch(error => {
+    console.error('Error fetching weather data:', error);
+});
+}
+
+function updateWeatherIndicators(weatherData) {
+const tempElement = document.querySelector('.indicator-card:nth-child(1) .value');
+const humidityElement = document.querySelector('.indicator-card:nth-child(2) .value');
+
+if (weatherData && weatherData.main) {
+const temperatureCelsius = weatherData.main.temp;
+const temperatureFahrenheit = (temperatureCelsius * 9/5) + 32;
+const humidity = weatherData.main.humidity;
+
+if (tempElement) {
+    tempElement.textContent = `${temperatureFahrenheit.toFixed(1)}°F`;
+}
+if (humidityElement) {
+    humidityElement.textContent = `${humidity}%`;
+}
+}
+}
+
+function setupLearnMoreLinks() {
+const learnMoreLinks = document.querySelectorAll('.intervention-card .learn-more');
+learnMoreLinks.forEach(link => {
+link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const targetUrl = this.getAttribute('href');
+    if (targetUrl) {
+        window.location.href = targetUrl;
+    } else {
+        alert('More information coming soon!');
+    }
+});
+});
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // Get elements
+    const heatMapButton = document.querySelector('.map-control-button:first-child');
+    const buildingsButton = document.querySelector('.map-control-button:last-child');
+    const heatMap = document.getElementById('map');
+    const buildingsMap = document.getElementById('building');
+    
+    // Initially show heat map and hide buildings map
+    heatMap.style.display = 'block';
+    buildingsMap.style.display = 'none';
+    
+    // Add click event listeners
+    heatMapButton.addEventListener('click', function() {
+        heatMap.style.display = 'block';
+        buildingsMap.style.display = 'none';
+        heatMapButton.classList.add('active');
+        buildingsButton.classList.remove('active');
+    });
+    
+    buildingsButton.addEventListener('click', function() {
+        heatMap.style.display = 'none';
+        buildingsMap.style.display = 'block';
+        buildingsButton.classList.add('active');
+        heatMapButton.classList.remove('active');
+    });
+});
+</script>
+<div id="forecast-tip" style="text-align:center; font-size:1.2em; margin-top:20px;"></div>
+
+</body>
+</html>

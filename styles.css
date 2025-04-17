@@ -1,0 +1,579 @@
+/* style.css */
+body {
+    font-family:  sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.panel {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #388e3c; /* Darker Green */
+    margin-bottom: 1em;
+}
+
+.sub-heading {
+    color: #777;
+    margin-bottom: 1.5em;
+    font-size: 1em;
+}
+
+/* Header */
+header {
+    
+    background-color: #f9f9f9;
+    padding: 1em 0;
+    border-bottom: 2px solid #388e3c;
+    margin-bottom: 0px;
+}
+h1{
+  color: #388e3c; 
+}
+header .container {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Needed for absolute positioning of the logo */
+}
+
+.logo {
+    font-size: 1.5em;
+    color: #4CAF50; /* Green */
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+.header-logo-left{
+    height: 80px;
+
+}
+nav a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #4CAF50;
+}
+
+.header-actions .report-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.header-actions .report-button:hover {
+    background-color: #388e3c;
+}
+
+.header-logo {
+    position: absolute;
+    top: 10px; /* Adjust as needed for vertical positioning */
+    right: 10px; /* Adjust as needed for horizontal positioning */
+    height: 50px; /* Adjust the height to control the logo size */
+    /* You can add more styling here like border-radius, etc. */
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.hero-text {
+    flex: 1;
+    margin-right: 40px;
+}
+
+.hero-text h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero-text p {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.hero-indicators {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    flex: 1;
+}
+
+.indicator-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.indicator-card h3 {
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.indicator-card .value {
+    font-size: 1.5em;
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.indicator-card .details {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.indicator-card .trend {
+    color: #999;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
+/* Heat Map Section */
+#heat-map-section {
+    margin-bottom: 30px;
+}
+
+.map-wrapper {
+    position: relative;
+}
+
+#map {
+    height: 400px; /* Ensure map container has height */
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #eee; /* Placeholder */
+}
+
+.map-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.map-control-button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.map-control-button.active {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.map-control-button:hover {
+    background-color: #eee;
+}
+
+.map-actions {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.map-actions button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+}
+
+.map-actions button:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Downtown UHI Section */
+#downtown-uhi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+#downtown-uhi h2 {
+    grid-column: 1 / span 2;
+}
+
+.uhi-details h3 {
+    color: #4CAF50;
+    margin-bottom: 0.8em;
+    font-size: 1.2em;
+}
+
+.uhi-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 1.5em;
+}
+
+.uhi-details li {
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+/* Cooling Interventions Section */
+#cooling-interventions {
+    margin-bottom: 30px;
+}
+
+#cooling-interventions h2 {
+    margin-bottom: 1em;
+}
+
+.interventions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Ensure that on larger screens, we aim for 3 columns */
+@media (min-width: 960px) {
+    .interventions-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.intervention-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.intervention-card .icon {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #4CAF50;
+}
+
+.intervention-card h3 {
+    color: #333;
+    margin-bottom: 0.8em;
+    font-size: 1.2em;
+}
+
+.intervention-card p {
+    color: #555;
+    margin-bottom: 1.2em;
+    font-size: 1em;
+}
+
+.intervention-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5em;
+    font-size: 0.9em;
+}
+
+.intervention-details .detail {
+    color: #777;
+}
+
+.intervention-details .value {
+    font-weight: bold;
+    color: #333;
+}
+
+.intervention-details .value.high {
+    color: #ff6f61; /* Reddish */
+}
+
+.intervention-details .value.medium-high {
+    color: #ef5350;
+}
+
+.intervention-details .value.medium {
+    color: #ffb74d; /* Orange */
+}
+
+.intervention-details .value.low-medium {
+    color: #81c784; /* Light Green */
+}
+
+.intervention-details .value.low {
+    color: #4CAF50; /* Green */
+}
+
+.intervention-details .value.variable {
+    color: #90a4ae; /* Grey */
+}
+
+.intervention-card .learn-more {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+    transition: color 0.3s ease;
+}
+
+.intervention-card .learn-more:hover {
+    color: #388e3c;
+}
+
+/* Community Input Section */
+#community-input-section {
+    margin-bottom: 30px;
+}
+
+.community-input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.why-input-matters h3 {
+    color: #4CAF50;
+    margin-bottom: 0.8em;
+    font-size: 1.2em;
+}
+
+.why-input-matters ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 1.5em;
+}
+
+.why-input-matters li {
+    margin-bottom: 0.5em;
+    color: #555;
+    font-size: 1em;
+}
+
+.report-heat-island h3 {
+    color: #4CAF50;
+    margin-bottom: 0.8em;
+    font-size: 1.2em;
+}
+
+#report-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5em;
+    color: #555;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group small {
+    color: #777;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
+.geolocation-button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 0.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    align-self: flex-start;
+    margin-top: 0.5em;
+}
+
+.geolocation-button:hover {
+    background-color: #d0d0d0;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+    align-self: flex-start;
+    margin-top: 1em;
+}
+
+.submit-button:hover {
+    background-color: #388e3c;
+}
+
+/* Footer */
+footer {
+    background-color: #f9f9f9;
+    padding: 1em 0;
+    margin-top: 30px;
+    border-top:1px solid #eee;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+footer nav li {
+    margin-left: 20px;
+}
+
+footer nav a {
+    text-decoration: none;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+    color: #4CAF50;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    #hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-bottom: 20px;
+    }
+
+    .hero-indicators {
+        grid-template-columns: 1fr;
+    }
+
+    #downtown-uhi, .community-input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .interventions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for smaller screens */
+    }
+    @media (min-width: 600px) and (max-width: 959px) {
+        .interventions-grid {
+            grid-template-columns: repeat(2, 1fr); /* Show 2 columns on medium screens */
+        }
+    }
+}
+
+/* Mobile-first adjustments (optional - adjust as needed) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .intervention-details {
+        flex-direction: column;
+    }
+}
