@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn More - Water Features</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            water: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+          },
+          boxShadow: {
+            'water': '0 4px 14px 0 rgba(56, 189, 248, 0.2)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .water-gradient {
+      background: linear-gradient(135deg, #0ea5e9 0%, #0c4a6e 100%);
+    }
+    
+    .water-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(224, 242, 254, 0.9) 100%);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .water-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(7, 89, 133, 0.2);
+    }
+    
+    .ripple-animation {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .ripple-animation::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle, transparent 1%, rgba(56, 189, 248, 0.1) 1%) center/15000%;
+      opacity: 0;
+      transition: background 0.5s, opacity 1s;
+    }
+    
+    .ripple-animation:active::after {
+      background-size: 100%;
+      opacity: 1;
+      transition: 0s;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-cyan-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="water-gradient text-white shadow-lg">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
+      <div class="logo text-2xl font-bold mb-4 md:mb-0 flex items-center">
+        <span class="text-water-200 mr-2">💧</span>CoolCity
+      </div>
+      <nav class="w-full md:w-auto">
+        <ul class="flex flex-wrap justify-center md:justify-end space-x-1 md:space-x-6">
+          <li><a href="../index.html" class="hover:underline">Dashboard</a></li>
+          <li><a href="../maps/heat-map.html" class="hover:underline">Heat Map</a></li>
+          
+          <li><a href="../maps/wind-map.html" class="hover:underline">Wind Map</a></li>
+          <li><a href="../maps/precip.html" class="hover:underline">Precipitation Map</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 flex-grow">
+    <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-water p-6 md:p-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-water-800 mb-4 flex items-center justify-center">
+          <span class="text-4xl mr-3">💧</span> Water Features
+        </h2>
+        <p class="text-lg text-water-700 max-w-3xl mx-auto">
+          Explore how water features help cities stay cool through evaporation while creating beautiful public spaces and improving livability.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <!-- Card 1: Benefits -->
+        <div class="water-card rounded-xl p-6 shadow-md">
+          <div class="text-4xl mb-4 text-water-500">🔍</div>
+          <h3 class="text-xl font-semibold text-water-800 mb-4">Benefits</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Creates cooling through evaporation, reducing ambient temperature by up to 2-3°C
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Adds aesthetic value and creates gathering spaces in urban areas
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Provides psychological cooling effect through sight and sound
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Can be integrated with stormwater management systems
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Creates habitat for urban wildlife and improves biodiversity
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Types & Implementation -->
+        <div class="water-card rounded-xl p-6 shadow-md">
+          <div class="text-4xl mb-4 text-water-500">🛠️</div>
+          <h3 class="text-xl font-semibold text-water-800 mb-4">Types & Implementation</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Fountains:</strong> Vertical water movement maximizes cooling effect.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Ponds & Lakes:</strong> Larger water bodies provide sustained cooling.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Misting Systems:</strong> Fine water droplets for efficient cooling.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Reflective Pools:</strong> Combines cooling with light reflection.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Urban Streams:</strong> Restored waterways provide natural cooling corridors.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Case Studies -->
+        <div class="water-card rounded-xl p-6 shadow-md">
+          <div class="text-4xl mb-4 text-water-500">🌍</div>
+          <h3 class="text-xl font-semibold text-water-800 mb-4">Global Examples</h3>
+          <p class="mb-3 text-gray-700">Cities around the world have implemented innovative water features for urban cooling:</p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Madrid Rio Park (Spain)</strong> - 6-mile urban riverside development with fountains and water features</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Cheonggyecheon Stream (Seoul)</strong> - Restored urban waterway reducing temperatures by 3.3-5.9°C</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Canal Park (Washington DC)</strong> - Sustainable water management with interactive fountains</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Design Considerations -->
+        <div class="water-card rounded-xl p-6 shadow-md">
+          <div class="text-4xl mb-4 text-water-500">📐</div>
+          <h3 class="text-xl font-semibold text-water-800 mb-4">Design Considerations</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Water Conservation:</strong> Use rainwater harvesting and recirculation systems</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Energy Efficiency:</strong> Solar-powered pumps reduce operational costs</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Maintenance:</strong> Regular cleaning prevents algae growth and ensures longevity</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Climate Appropriateness:</strong> Consider evaporation rates in different climates</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              <span><strong class="text-water-700">Safety:</strong> Proper depth and anti-slip surfaces around water features</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Effectiveness -->
+        <div class="water-card rounded-xl p-6 shadow-md">
+          <div class="text-4xl mb-4 text-water-500">📊</div>
+          <h3 class="text-xl font-semibold text-water-800 mb-4">Cooling Effectiveness</h3>
+          <div class="space-y-2 mb-4">
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700">Cooling Potential:</span>
+              <span class="px-3 py-1 bg-water-200 text-water-800 rounded-full text-sm font-medium">Medium-High</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700">Installation Cost:</span>
+              <span class="px-3 py-1 bg-water-200 text-water-800 rounded-full text-sm font-medium">Medium</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700">Maintenance:</span>
+              <span class="px-3 py-1 bg-water-200 text-water-800 rounded-full text-sm font-medium">Medium-High</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700">Water Consumption:</span>
+              <span class="px-3 py-1 bg-water-200 text-water-800 rounded-full text-sm font-medium">High</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700">Lifespan:</span>
+              <span class="px-3 py-1 bg-water-200 text-water-800 rounded-full text-sm font-medium">10-20 years</span>
+            </div>
+          </div>
+          <p class="text-gray-700">Water features are most effective in dry climates where evaporation creates significant cooling. The cooling effect typically extends 15-30 meters from the water source.</p>
+        </div>
+
+        <!-- Card 6: Integration with Other Strategies -->
+        <div class="water-card rounded-xl p-6 shadow-md">
+          <div class="text-4xl mb-4 text-water-500">🔄</div>
+          <h3 class="text-xl font-semibold text-water-800 mb-4">Integration Strategies</h3>
+          <p class="mb-3 text-gray-700">Water features work best when combined with other cooling interventions:</p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Pair with shade trees to maximize comfort in public spaces
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Integrate with green infrastructure for stormwater management
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Combine with cool paving materials in plazas and walkways
+            </li>
+            <li class="flex items-start">
+              <span class="text-water-500 mr-2">•</span>
+              Incorporate into green and blue roof systems for buildings
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Back Link -->
+      <div class="text-center mt-8">
+        <a href="../index.html" class="inline-flex items-center px-6 py-3 bg-water-600 hover:bg-water-700 text-white font-medium rounded-lg transition-colors duration-300 ripple-animation">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Back to Cooling Interventions
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-water-800 text-white py-6 mt-10">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="mb-4 md:mb-0">&copy; 2025 CoolCity. All rights reserved.</p>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="#" class="hover:text-water-300 transition-colors duration-300">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-water-300 transition-colors duration-300">Terms of Use</a></li>
+            <li><a href="#" class="hover:text-water-300 transition-colors duration-300">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
