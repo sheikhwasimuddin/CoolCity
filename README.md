@@ -40,8 +40,9 @@ cd CoolCity
 # Open frontend (static HTML/JS/CSS)
 # Just open index.html in your browser or serve with a local server like Live Server
 ```
-
 📂 Project Structure
+
+
 CoolCity/
 ├── assets/                  # Images and icons
 ├── components/              # Reusable JS components
@@ -54,7 +55,6 @@ CoolCity/
 │   ├── routes/              # API routes
 │   ├── controllers/         # Logic for endpoints
 │   └── .env                 # Environment variables
-
 ✨ Upcoming Features
 User accounts with saved locations
 
